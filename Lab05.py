@@ -23,6 +23,8 @@ import sklearn as skl
 from sklearn import datasets, linear_model
 from sklearn.model_selection import cross_val_score
 
+import subprocess
+
 # Define some useful functions
 class PlotLossAccuracy(keras.callbacks.Callback):
     def on_train_begin(self, logs={}):
@@ -79,8 +81,14 @@ def save_model_to_disk():
     
     
     print('loading the dataset...')
+    
+subprocess.run([
+    "curl", "--create-dirs", 
+    "-o", "/home/tcd/data/cifar10-dataset.pkl", 
+    "https://tcddeeplearning.blob.core.windows.net/deeplearning202324/cifar10-dataset.pkl"
+])
 
-pkl_file = open("C:/Users/Griffin/Downloads/cifar10-dataset.pkl")
+pkl_file = open('/home/tcd/data/cifar10-dataset.pkl', 'rb')
 dataset = pickle.load(pkl_file)
 
 print('loaded.')
