@@ -80,7 +80,7 @@ def save_model_to_disk():
     
     print('loading the dataset...')
 
-pkl_file = open('/home/tcd/data/cifar10-dataset.pkl', 'rb')
+pkl_file = open("C:/Users/Griffin/Downloads/cifar10-dataset.pkl")
 dataset = pickle.load(pkl_file)
 
 print('loaded.')
