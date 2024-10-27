@@ -1,4 +1,4 @@
-from Lab05 import *
+from Lab05.Lab05 import *
 
 
 # let's split data between validation set and training set
