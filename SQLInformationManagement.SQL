@@ -161,13 +161,13 @@ VALUES
 
 
 
-
+ -- (a) used to find all entities of a particular entity type
 SELECT * FROM Client;
 
+ -- (b) used to return all entities of a particular entity type
 SELECT * FROM Client WHERE Plan = 'Premium';
-
+ -- or
 SELECT * FROM Workspace WHERE is_Active = TRUE;
 
-SELECT * FROM Workspace WHERE Client_ID = 1;
-
+ -- (c) used to return entities of a 1:N relationship
 SELECT * FROM Contacts WHERE Company_ID = 2;
